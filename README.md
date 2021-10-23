@@ -1,3 +1,3 @@
 # ipfs-uploader
 
-![CI](https://github.com/LesnyRumcajs/ipfs-uploader/workflows/CI/badge.svg)
+![CI](https://github.com/LesnyRumcajs/ipfs-uploader/workflows/Rust/badge.svg)
