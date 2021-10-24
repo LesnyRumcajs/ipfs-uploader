@@ -15,6 +15,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     env_logger::init();
     debug!("{:?}", opt);
 
+    // Create the contract
     let (abi, bytecode) = compile_contract(&opt.contract_name, &opt.contract_path);
     let account_address = opt.account_address.parse::<Address>()?;
     let client =
@@ -25,6 +26,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         "Deploying contract with account address: {}",
         account_address
     );
+
+    // Deploy the contract
     let deployer = factory.deploy(())?.legacy();
     let contract = deployer.clone().send().await?;
     println!("{:?}", contract.address());
