@@ -12,6 +12,11 @@ lto = true
 log = "0.4"
 env_logger = "0.9"
 structopt = "0.3"
+ipfs-api-backend-hyper = "0.2"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+ethers = "0.5"
 
-[[bin]]
-name = "ipfs-uploader"
+[dev-dependencies]
+assert_cmd = "2"
+tempfile = "3.2"
+rand = "0.8"
