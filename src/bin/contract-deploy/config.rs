@@ -2,7 +2,10 @@ use std::path::PathBuf;
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
-#[structopt(about = "Helper utility to upload the CidStorage smart contract.")]
+#[structopt(
+    name = "contract-deploy",
+    about = "Helper utility to upload the CidStorage smart contract."
+)]
 pub struct Opt {
     /// Contract name
     #[structopt(long, default_value = "CidStorage")]
