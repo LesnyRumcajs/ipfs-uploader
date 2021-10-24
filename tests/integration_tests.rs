@@ -46,7 +46,7 @@ fn ipfs_upload_should_deploy_file_to_ipfs_and_smart_contract() {
         .success();
 
     // Get the contract address
-    let contract_address: String = String::from_utf8(deploy_cmd.get_output().stdout.clone())
+    let contract_address = String::from_utf8(deploy_cmd.get_output().stdout.clone())
         .unwrap()
         .trim()
         .to_owned();
@@ -75,7 +75,7 @@ fn ipfs_upload_should_deploy_file_to_ipfs_and_smart_contract() {
         .success();
 
     // Get the CID of the output
-    let cid: String = String::from_utf8(ipfs_upload_cmd.get_output().stdout.clone())
+    let cid = String::from_utf8(ipfs_upload_cmd.get_output().stdout.clone())
         .unwrap()
         .trim()
         .to_owned();
@@ -90,7 +90,6 @@ fn ipfs_upload_should_deploy_file_to_ipfs_and_smart_contract() {
         .assert()
         .success();
 
-    let actual_content: String =
-        String::from_utf8(ipfs_verify.get_output().stdout.clone()).unwrap();
+    let actual_content = String::from_utf8(ipfs_verify.get_output().stdout.clone()).unwrap();
     assert_eq!(actual_content, temp_file_content);
 }
