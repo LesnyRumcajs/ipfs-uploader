@@ -1,0 +1,13 @@
+version: '3'
+services:
+  ipfs:
+    container_name: ipfs_host
+    image: ipfs/go-ipfs:latest
+    ports:
+      - '5001:5001'
+  ganache:
+    container_name: ganache_host
+    image: trufflesuite/ganache-cli:latest
+    command: -d
+    ports:
+      - '8545:8545'
